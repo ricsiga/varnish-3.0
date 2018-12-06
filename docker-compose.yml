@@ -1,0 +1,11 @@
+version: '3'
+services:
+  varnish30:
+    container_name: varnish30
+    image: varnish30
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./supervisor_varnish_docker.conf:/etc/supervisor/conf.d/supervisor_varnish_docker.conf
+      - ./default.vcl:/etc/varnish/default.vcl
